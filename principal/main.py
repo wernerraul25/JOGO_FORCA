@@ -13,4 +13,5 @@ limpar_tela()
 
 print("-="*20)
 print("JOGO DA FORCA")
+print("Seja bem vindo!")
 print("-="*20)
