@@ -11,14 +11,16 @@ nome_competidor = input("Nome do competidor: ")
 limpar_tela()
 
 palavra_chave = input("Digite a palavra chave: ")
-dica1 = input("Digite a dica 1: ")
-dica2 = input("Digite a dica 2: ")
-dica3 = input("Digite a dica 3: ")
+dicas = [input("Dica 1: "),input("Dica 2: "),input("Dica 3: ")]
 
 limpar_tela()
 
-print("A palavra chave contém", len(palavra_chave), "letras!")
-input("clique 'enter' para continuar...")
+print("A palavra chave contém", len(palavra_chave), "letra(s)!")
+input("press enter to continue...")
 limpar_tela()
 
-jogo_dica = input("")
+print("Selecione a opção que deseja digitando o número equivalente!")
+jogo_dica = input("(0)Jogar \n(1)Solicitar dica\n")
+
+dicas_solicitadas = 0
+chances = 5
