@@ -2,9 +2,9 @@ from funcoes import limpar_tela
 
 limpar_tela()
 
-print("-="*20)
+print("*-"*10)
 print("JOGO DA FORCA")
-print("-="*20)
+print("*-"*10)
 input("Press enter to continue...")
 
 limpar_tela()
@@ -25,17 +25,17 @@ input("press enter to continue...")
 limpar_tela()
 
 print("Selecione a opção que deseja digitando o número equivalente!")
-jogo_dica = input(str("(0)Jogar \n(1)Solicitar dica\n(2)Sair do jogo\n"))
+opcoes_de_jogo = input(str("(0)Jogar \n(1)Solicitar dica\n(2)Sair do jogo\n"))
 
 chances = 5
 dicas_solicitadas = 0
 
 while chances > 0:
-    if jogo_dica == "0":
+    if opcoes_de_jogo == "0":
         input(str("Informe uma letra: "))
         chances = chances - 1#faz 5 vezes estando certo ou errado
-    elif jogo_dica =="1":#resolver como mostrar uma dica por vez
+    elif opcoes_de_jogo =="1":#resolver como mostrar uma dica por vez
         print(dicas)
         dicas_solicitadas = dicas_solicitadas + 1
-    elif jogo_dica =="2":
+    elif opcoes_de_jogo =="2":
         break
