@@ -27,8 +27,3 @@ def menu():
     opcao = input("Escolha uma opção: ")
     return opcao
 
-def solicitar_dica1():
-    # exibe a dica 1 e solicita uma letra ao usuário
-    print("\nDica 1: a primeira letra da palavra é 'A'")
-    letra = input("Digite uma letra: ")
-    return letra

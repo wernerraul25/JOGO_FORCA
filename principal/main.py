@@ -70,6 +70,5 @@ try:
             break
         else:
             print("Opção inválida, tente novamente!")
-    print("Meus parabéns o jogo acabou!")
 except:
     print("O jogo acabou!")
