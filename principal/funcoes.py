@@ -18,3 +18,17 @@ def criar_base_dados():
         print("Base de dados criada com sucesso")
         input("Press enter to continue...")
         arquivo.close()
+
+def menu():
+    # exibe as opções do menu e retorna a opção selecionada pelo usuário
+    opcoes = ["(0)Solicitar dica\n(1)Jogar\n(2)Sair"]
+    print("Menu:")
+    print("\n".join(opcoes))
+    opcao = input("Escolha uma opção: ")
+    return opcao
+
+def solicitar_dica1():
+    # exibe a dica 1 e solicita uma letra ao usuário
+    print("\nDica 1: a primeira letra da palavra é 'A'")
+    letra = input("Digite uma letra: ")
+    return letra
