@@ -15,6 +15,7 @@ nome_competidor = input("Nome do competidor: ")
 limpar_tela()
 
 palavra_chave = input("Digite a palavra chave: ")
+letras_descobertas = []
 dicas = [input("Dica 1: "), input("Dica 2: "), input("Dica 3: ")]
 
 
@@ -30,12 +31,33 @@ opcoes_de_jogo = input(str("(0)Jogar \n(1)Solicitar dica\n(2)Sair do jogo\n"))
 chances = 5
 dicas_solicitadas = 0
 
-while chances > 0:
-    if opcoes_de_jogo == "0":
-        input(str("Informe uma letra: "))
-        chances = chances - 1#faz 5 vezes estando certo ou errado
-    elif opcoes_de_jogo =="1":#resolver como mostrar uma dica por vez
-        print(dicas)
-        dicas_solicitadas = dicas_solicitadas + 1
-    elif opcoes_de_jogo =="2":
-        break
+try:
+    while chances > 0:
+        if opcoes_de_jogo == "0":
+            for i in range(0, len(palavra_chave)):
+                letras_descobertas.append("*")
+
+            acertou = False
+
+            while acertou == False :
+                letra = str(input("Digite a letra: "))
+
+                for i in range(0, len(palavra_chave)):
+                    if letra == palavra_chave[i]:
+                        letras_descobertas[i] = letra
+
+                    print(letras_descobertas[i])
+
+                acertou == True
+
+                for x in range(0, len(letras_descobertas)):
+                    if letras_descobertas[x] == "*":
+                        acertou = False
+#bug não termina nunca                
+        elif opcoes_de_jogo =="1":#resolver como mostrar uma dica por vez
+            print(dicas)
+            dicas_solicitadas = dicas_solicitadas + 1
+        elif opcoes_de_jogo =="2":
+            break
+except:
+    print("O jogo acabou!")
