@@ -53,7 +53,7 @@ try:
                 for x in range(0, len(letras_descobertas)):
                     if letras_descobertas[x] == "*":
                         acertou = False
-#bug não termina nunca                
+#bug, não termina nunca                
         elif opcoes_de_jogo =="1":#resolver como mostrar uma dica por vez
             print(dicas)
             dicas_solicitadas = dicas_solicitadas + 1
