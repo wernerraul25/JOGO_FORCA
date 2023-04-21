@@ -1,11 +1,8 @@
-from funcoes import limpar_tela
+from funcoes import limpar_tela, tela_inicial
 
 limpar_tela()
 
-print("*-"*10)
-print("JOGO DA FORCA")
-print("*-"*10)
-input("Press enter to continue...")
+tela_inicial()
 
 limpar_tela()
 
