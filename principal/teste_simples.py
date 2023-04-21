@@ -21,8 +21,10 @@ while acertou == False :
 
         print(letras_descobertas[i])
 
-    acertou == True
+    acertou = True
 
     for x in range(0, len(letras_descobertas)):
         if letras_descobertas[x] == "*":
             acertou = False
+
+    print("Parabéns")
