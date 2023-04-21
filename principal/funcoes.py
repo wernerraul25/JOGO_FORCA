@@ -27,3 +27,9 @@ def menu():
     opcao = input("Escolha uma opção: ")
     return opcao
 
+def menu_novamente():
+    opcoes = ["(0)Reiniciar jogo\n(1)Sair"]
+    print("Menu:")
+    print("\n".join(opcoes))
+    opcao = input("Escolha sua opção: ")
+    return opcao

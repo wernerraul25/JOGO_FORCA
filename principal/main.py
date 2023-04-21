@@ -1,74 +1,76 @@
-from funcoes import limpar_tela, tela_inicial, menu
+from funcoes import limpar_tela, tela_inicial, menu, menu_novamente
 
-limpar_tela()
+jogar_novamente = True
 
-tela_inicial()
+while jogar_novamente:
+    limpar_tela()
 
-limpar_tela()
+    tela_inicial()
 
-nome_desafiante = input("Nome do desafiante: ")
-nome_competidor = input("Nome do competidor: ")
+    limpar_tela()
 
-limpar_tela()
+    nome_desafiante = input("Nome do desafiante: ")
+    nome_competidor = input("Nome do competidor: ")
 
-palavra_chave = input("Digite a palavra chave: ")
-dica1 = input("Dica 1: ")
-dica2 = input("Dica 2: ")
-dica3 = input("Dica 3: ")
+    limpar_tela()
 
-letras_descobertas = []
+    palavra_chave = input("Digite a palavra chave: ")
+    dica1 = input("Dica 1: ")
+    dica2 = input("Dica 2: ")
+    dica3 = input("Dica 3: ")
 
-limpar_tela()
+    letras_descobertas = []
 
-tamanho_palavra_chave = len(palavra_chave)
-palavra_oculta = '*' * tamanho_palavra_chave
-dicas_solicitadas = 0
+    limpar_tela()
 
-print("A palavra chave contém", tamanho_palavra_chave, "letra(s)!")
-input("press enter to continue...")
+    tamanho_palavra_chave = len(palavra_chave)
+    palavra_oculta = '*' * tamanho_palavra_chave
+    dicas_solicitadas = 0
 
-limpar_tela()
+    print("A palavra chave contém", tamanho_palavra_chave, "letra(s)!")
+    input("press enter to continue...")
 
-try:
-    while True:
-        opcao = menu()
-        if opcao =="0":
-            dicas_solicitadas += 1
-            if dicas_solicitadas > 3:
-                print("Você solicitou o número máximo de dicas!")
-            else:
-                if dicas_solicitadas == 1:
-                    print("Dica 1:", dica1)
-                elif dicas_solicitadas == 2:
-                    print("Dica 2:", dica2)
+    limpar_tela()
+
+    try:
+        while True:
+            opcao = menu()
+            if opcao =="0":
+                dicas_solicitadas += 1
+                if dicas_solicitadas > 3:
+                    print("Você solicitou o número máximo de dicas!")
                 else:
-                    print("Dica 3:", dica3)
-                #bug, fecha o jogo ao pedir dica
-            pass
-        elif opcao == "1":
-            for i in range(0, len(palavra_chave)):
-                letras_descobertas.append("*")
-
-            acertou = False
-
-            while acertou == False :
-                letra = str(input("DIgite a letra: "))
-
+                    if dicas_solicitadas == 1:
+                        print("Dica 1:", dica1)
+                    elif dicas_solicitadas == 2:
+                        print("Dica 2:", dica2)
+                    else:
+                        print("Dica 3:", dica3)
+                    #bug, fecha o jogo ao pedir dica
+                pass
+            elif opcao == "1":
                 for i in range(0, len(palavra_chave)):
-                    if letra == palavra_chave[i]:
-                        letras_descobertas[i] = letra
+                    letras_descobertas.append("*")
 
-                    print(letras_descobertas[i])
+                acertou = False
 
-                acertou = True
+                while acertou == False :
+                    letra = str(input("Digite a letra: "))
 
-                for x in range(0, len(letras_descobertas)):
-                    if letras_descobertas[x] == "*":
-                        acertou = False
-            break
-        elif opcao =="2":
-            break
-        else:
-            print("Opção inválida, tente novamente!")
-except:
-    print("O jogo acabou!")
+                    for i in range(0, len(palavra_chave)):
+                        if letra == palavra_chave[i]:
+                            letras_descobertas[i] = letra
+
+                        print(letras_descobertas[i])
+
+                    acertou = True
+
+                    for x in range(0, len(letras_descobertas)):
+                        if letras_descobertas[x] == "*":
+                            acertou = False
+            elif opcao =="2":
+                break
+            else:
+                print("Opção inválida, tente novamente!")
+    except:
+        print("O jogo acabou!")
