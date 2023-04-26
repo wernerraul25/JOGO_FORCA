@@ -1,14 +1,12 @@
-from funcoes import limpar_tela, tela_inicial, menu, menu_novamente
+from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico
 
-jogar_novamente = True
+limpar_tela()
 
-while jogar_novamente:
-    limpar_tela()
+tela_inicial()
 
-    tela_inicial()
+limpar_tela()
 
-    limpar_tela()
-
+while True:
     nome_desafiante = input("Nome do desafiante: ")
     nome_competidor = input("Nome do competidor: ")
 
@@ -19,8 +17,6 @@ while jogar_novamente:
     dica2 = input("Dica 2: ")
     dica3 = input("Dica 3: ")
 
-    letras_descobertas = []
-
     limpar_tela()
 
     tamanho_palavra_chave = len(palavra_chave)
@@ -29,48 +25,73 @@ while jogar_novamente:
 
     print("A palavra chave contém", tamanho_palavra_chave, "letra(s)!")
     input("press enter to continue...")
+    
+    erros = 0
+    tentativas = []
+    acertos= []
+    vencedor = []
 
     limpar_tela()
 
-    try:
-        while True:
-            opcao = menu()
-            if opcao =="0":
-                dicas_solicitadas += 1
-                if dicas_solicitadas > 3:
-                    print("Você solicitou o número máximo de dicas!")
-                else:
-                    if dicas_solicitadas == 1:
-                        print("Dica 1:", dica1)
-                    elif dicas_solicitadas == 2:
-                        print("Dica 2:", dica2)
-                    else:
-                        print("Dica 3:", dica3)
-                    #bug, fecha o jogo ao pedir dica
-                pass
-            elif opcao == "1":
-                for i in range(0, len(palavra_chave)):
-                    letras_descobertas.append("*")
-
-                acertou = False
-
-                while acertou == False :
-                    letra = str(input("Digite a letra: "))
-
-                    for i in range(0, len(palavra_chave)):
-                        if letra == palavra_chave[i]:
-                            letras_descobertas[i] = letra
-
-                        print(letras_descobertas[i])
-
-                    acertou = True
-
-                    for x in range(0, len(letras_descobertas)):
-                        if letras_descobertas[x] == "*":
-                            acertou = False
-            elif opcao =="2":
-                break
+    while True:
+        opcao = menu()
+        if opcao =="2":
+            dicas_solicitadas += 1
+            if dicas_solicitadas > 3:
+                print("Você solicitou o número máximo de dicas!")
             else:
-                print("Opção inválida, tente novamente!")
-    except:
-        print("O jogo acabou!")
+                if dicas_solicitadas == 1:
+                    print("Dica 1:", dica1)
+                elif dicas_solicitadas == 2:
+                    print("Dica 2:", dica2)
+                else:
+                    print("Dica 3:", dica3)
+            pass
+        elif opcao == "1":
+            letra = input("Digite uma letra: ")
+            if letra in tentativas:
+                print("Você já tentou essa letra anteriormente.")
+            elif letra not in palavra_chave:
+                print("Esse letra não pertence a palavra.")
+                tentativas.append(letra)
+                erros += 1
+            else:
+                print("Você acertou a letra:")
+                acertos.append(letra)
+                palavra = ""
+                for letra in palavra_chave:
+                    if letra in acertos:
+                        palavra += letra
+                    else:
+                        palavra += "*"
+                print(palavra)
+                if palavra == palavra_chave:
+                    print(nome_competidor,"parabéns, você acertou a palavra!")
+                    vencedor = nome_competidor
+                    break
+        elif opcao == "3":
+            try:
+                historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
+                ler_historico()
+            except:
+                print("Arquivo não encontrado!")
+        else:
+            print("Opção inválida, tente novamente!")
+        if erros >= 5:
+            print("Suas chances acabaram! Você perdeu!")
+            break                 
+    
+    opcao2 = input("Menu:\n(1)Jogar Novamente\n(2)Sair\n(3)Ver histórico de partidas\nEscolha uma opção: ")
+    if opcao2 == "1":
+        pass
+    elif opcao2 == "2":
+        break
+    elif opcao == "3":
+            try:
+                historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
+                ler_historico()
+            except:
+                print("Arquivo não encontrado!")
+    else:
+        print("Não era pra tu ter clicado errado!")
+        break

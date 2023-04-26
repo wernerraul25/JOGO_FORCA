@@ -9,27 +9,36 @@ def tela_inicial():
     print("*-"*10)
     input("Press enter to continue...")
 
-def criar_base_dados():
+def criar_historico():
     try:
-        arquivo = open("banco_dados.txt","r")
+        arquivo = open("historico.txt","r")
         arquivo.close()
     except:
-        arquivo = open("banco_dados.txt","w")
+        arquivo = open("historico.txt","w")
         print("Base de dados criada com sucesso")
         input("Press enter to continue...")
         arquivo.close()
 
 def menu():
     # exibe as opções do menu e retorna a opção selecionada pelo usuário
-    opcoes = ["(0)Solicitar dica\n(1)Jogar\n(2)Sair"]
+    opcoes = ["(1)Jogar\n(2)Solicitar dica\n(3)Ver resultados anteriores"]
     print("Menu:")
     print("\n".join(opcoes))
     opcao = input("Escolha uma opção: ")
     return opcao
 
-def menu_novamente():
-    opcoes = ["(0)Reiniciar jogo\n(1)Sair"]
-    print("Menu:")
-    print("\n".join(opcoes))
-    opcao = input("Escolha sua opção: ")
-    return opcao
+def historico(nome_competidor, nome_desafiante,palavra_chave, vencedor):
+    arquivo = open("historico.txt","a")
+    if vencedor == nome_competidor:
+        arquivo.write("Vencedor:", nome_competidor, "Perdedor:", nome_desafiante, "Palavra-chave:", palavra_chave, sep=",")
+        arquivo.write("\n")
+    else:
+        arquivo.write("Vencedor: {nome_desafiante}, Perdedor: {nome_competidor}, Palavra-chave: {palavra_chave}")
+        arquivo.write("\n")
+    arquivo.close()
+
+def ler_historico():
+    arquivo = open("historico.txt","r")
+    dados = arquivo.read()
+    arquivo.close()
+    print(dados)
