@@ -1,4 +1,4 @@
-from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico
+from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, convert_caps
 
 limpar_tela()
 
@@ -52,7 +52,7 @@ while True:
             if letra in tentativas:
                 print("Você já tentou essa letra anteriormente.")
             elif letra not in palavra_chave:
-                print("Esse letra não pertence a palavra.")
+                print("Essa letra não pertence a palavra.")
                 tentativas.append(letra)
                 erros += 1
             else:
@@ -67,7 +67,8 @@ while True:
                 print(palavra)
                 if palavra == palavra_chave:
                     limpar_tela()
-                    print(nome_competidor,"parabéns, você acertou a palavra!")
+                    win_upper = convert_caps(nome_competidor)
+                    print(win_upper,"parabéns, você acertou a palavra!")
                     vencedor = nome_competidor
                     break
         elif opcao == "3":
@@ -91,6 +92,7 @@ while True:
             try:
                 historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
                 ler_historico()
+                
             except:
                 print("Arquivo não encontrado!")
     else:

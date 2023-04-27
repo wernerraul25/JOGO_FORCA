@@ -42,3 +42,6 @@ def ler_historico():
     dados = arquivo.read()
     arquivo.close()
     print(dados)
+
+def convert_caps(texto):
+    return texto.upper()
