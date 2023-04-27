@@ -87,7 +87,7 @@ while True:
         pass
     elif opcao2 == "2":
         break
-    elif opcao == "3":
+    elif opcao2 == "3":
             try:
                 historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
                 ler_historico()
