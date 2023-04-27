@@ -66,6 +66,7 @@ while True:
                         palavra += "*"
                 print(palavra)
                 if palavra == palavra_chave:
+                    limpar_tela()
                     print(nome_competidor,"parabéns, você acertou a palavra!")
                     vencedor = nome_competidor
                     break
