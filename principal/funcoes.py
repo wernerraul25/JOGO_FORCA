@@ -7,7 +7,7 @@ def tela_inicial():
     print("*-"*10)
     print("JOGO DA FORCA")
     print("*-"*10)
-    input("Press enter to continue...")
+    input("Press ENTER to continue...")
 
 def criar_historico():
     try:

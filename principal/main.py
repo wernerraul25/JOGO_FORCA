@@ -1,12 +1,12 @@
 from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, convert_caps
 
-limpar_tela()
-
 while True:
+    limpar_tela()
+
     tela_inicial()
 
     limpar_tela()
-    
+
     nome_desafiante = input("Nome do desafiante: ")
     nome_competidor = input("Nome do competidor: ")
 
@@ -24,7 +24,7 @@ while True:
     dicas_solicitadas = 0
 
     print("A palavra chave contém", tamanho_palavra_chave, "letra(s)!")
-    input("press enter to continue...")
+    input("Press ENTER to continue...")
     
     erros = 0
     tentativas = []
@@ -73,7 +73,6 @@ while True:
                     break
         elif opcao == "3":
             try:
-                historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
                 ler_historico()
             except:
                 print("Arquivo não encontrado!")
@@ -84,7 +83,7 @@ while True:
             print("Suas chances acabaram! " + lose_upper +" Você perdeu!")
             break                 
     
-    opcao2 = input("Menu:\n(1)Jogar Novamente\n(2)Sair\n(3)Ver histórico de partidas\nEscolha uma opção: ")
+    opcao2 = input("\nMenu:\n(1)Jogar Novamente\n(2)Sair\n(3)Ver histórico de partidas\nEscolha uma opção: ")
     if opcao2 == "1":
         pass
     elif opcao2 == "2":
@@ -93,7 +92,7 @@ while True:
             try:
                 historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
                 ler_historico()
-                
+                input("Press ENTER to continue...")
             except:
                 print("Arquivo não encontrado!")
     else:
