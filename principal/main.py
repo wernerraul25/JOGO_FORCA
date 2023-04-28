@@ -2,11 +2,11 @@ from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, c
 
 limpar_tela()
 
-tela_inicial()
-
-limpar_tela()
-
 while True:
+    tela_inicial()
+
+    limpar_tela()
+    
     nome_desafiante = input("Nome do desafiante: ")
     nome_competidor = input("Nome do competidor: ")
 
@@ -98,4 +98,3 @@ while True:
                 print("Arquivo não encontrado!")
     else:
         print("Opção inválida, tente novamente!")
-        pass
