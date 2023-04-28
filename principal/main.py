@@ -80,7 +80,8 @@ while True:
         else:
             print("Opção inválida, tente novamente!")
         if erros >= 5:
-            print("Suas chances acabaram! Você perdeu!")
+            lose_upper = convert_caps(nome_competidor)
+            print("Suas chances acabaram! " + lose_upper +" Você perdeu!")
             break                 
     
     opcao2 = input("Menu:\n(1)Jogar Novamente\n(2)Sair\n(3)Ver histórico de partidas\nEscolha uma opção: ")
