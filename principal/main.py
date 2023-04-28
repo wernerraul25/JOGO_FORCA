@@ -68,7 +68,7 @@ while True:
                 if palavra == palavra_chave:
                     limpar_tela()
                     win_upper = convert_caps(nome_competidor)
-                    print(win_upper,"parabéns, você acertou a palavra!")
+                    print(win_upper,"parabéns, você acertou a palavra! A palavra era:",palavra_chave)
                     vencedor = nome_competidor
                     break
         elif opcao == "3":
@@ -97,5 +97,5 @@ while True:
             except:
                 print("Arquivo não encontrado!")
     else:
-        print("Não era pra tu ter clicado errado!")
-        break
+        print("Opção inválida, tente novamente!")
+        pass
