@@ -39,14 +39,14 @@ try:
             if opcao =="2":
                 dica = 0
                 if dica == 0:
-                    print("Dica 1:", dica1)
                     dica = dica+1
+                    print("Dica 1:", dica1)
                     print(dica)
                     input("Press ENTER to continue...")
                     limpar_tela()
                 elif dica == 1:
                     print("Jogue para desbloquear mais dicas!")
-                    dica = dica + 1
+                    dica = dica+1
                     input("Press ENTER to continue...")
                     limpar_tela()
                 elif dica == 2:
