@@ -27,13 +27,13 @@ def menu():
     opcao = input("Escolha uma opção: ")
     return opcao
 
-def historico(nome_competidor, nome_desafiante,palavra_chave, vencedor):
+def historico(nome_desafiante, nome_competidor, palavra_chave, vencedor):
     arquivo = open("historico.txt","a")
     if vencedor == nome_competidor:
-        arquivo.write("Vencedor:" + nome_competidor + ", Perdedor: Desafiante " + nome_desafiante + ", Palavra-chave: " + palavra_chave)
+        arquivo.write("Vencedor: Competidor " + nome_competidor + ", Perdedor: Desafiante " + nome_desafiante + ", Palavra-chave: " + palavra_chave)
         arquivo.write("\n")
     else:
-        arquivo.write("Vencedor:" + nome_desafiante + ", Perdedor: Competidor " + nome_competidor+ ", Palavra-chave: " + palavra_chave)
+        arquivo.write("Vencedor: Desafiante " + nome_desafiante + ", Perdedor: Competidor " + nome_competidor+ ", Palavra-chave: " + palavra_chave)
         arquivo.write("\n")
     arquivo.close()
 
