@@ -1,4 +1,4 @@
-from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, convert_caps, teste_vazio
+from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, convert_caps, teste_vazio, menu_final
 
 while True:
     limpar_tela()
@@ -8,21 +8,14 @@ while True:
     limpar_tela()
 
     nome_competidor = input("Nome do competidor: ")
-    teste_vazio(nome_competidor)
-
     nome_desafiante = input("Nome do desafiante: ")
-    teste_vazio(nome_desafiante)
 
     limpar_tela()
 
     palavra_chave = input("Digite a palavra chave: ")
-    teste_vazio(palavra_chave)
     dica1 = input("Dica 1: ")
-    teste_vazio(dica1)
     dica2 = input("Dica 2: ")
-    teste_vazio(dica2)
     dica3 = input("Dica 3: ")
-    teste_vazio(dica3)
 
     limpar_tela()
 
@@ -91,17 +84,20 @@ while True:
             print("Suas chances acabaram! " + lose_upper +" Você perdeu!")
             break                 
     
-    opcao2 = input("\nMenu:\n(1)Jogar Novamente\n(2)Sair\n(3)Ver histórico de partidas\nEscolha uma opção: ")
-    if opcao2 == "1":
-        pass
-    elif opcao2 == "2":
-        break
-    elif opcao2 == "3":
-            try:
-                historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
-                ler_historico()
-                input("Press ENTER to continue...")
-            except:
-                print("Arquivo não encontrado!")
-    else:
-        print("Opção inválida, tente novamente!")
+    while True:    
+        opcao2 = menu_final()
+        if opcao2 == "1":
+            pass
+            break
+        elif opcao2 == "2":
+            break
+        elif opcao2 == "3":
+                try:
+                    historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
+                    ler_historico()
+                    menu_final()
+                except:
+                    print("Arquivo não encontrado!")
+        else:
+            print("Opção inválida, tente novamente!")
+    break

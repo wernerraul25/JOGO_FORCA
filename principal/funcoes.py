@@ -61,3 +61,7 @@ def teste_vazio(texto):
             break
         else:
             print("Você não digitou nada, tente novamente!")'''
+
+def menu_final():
+    opcao2 = input("\nMenu:\n(1)Jogar Novamente\n(2)Sair\n(3)Ver histórico de partidas\nEscolha uma opção: ")
+    return opcao2
