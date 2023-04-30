@@ -84,20 +84,17 @@ while True:
             print("Suas chances acabaram! " + lose_upper +" Você perdeu!")
             break                 
     
-    while True:    
-        opcao2 = menu_final()
-        if opcao2 == "1":
-            pass
-            break
-        elif opcao2 == "2":
-            break
-        elif opcao2 == "3":
-                try:
-                    historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
-                    ler_historico()
-                    menu_final()
-                except:
-                    print("Arquivo não encontrado!")
-        else:
-            print("Opção inválida, tente novamente!")
-    break
+    opcao2 = menu_final()
+    if opcao2 == "1":
+        error
+    elif opcao2 == "2":
+        break
+    elif opcao2 == "3":
+            try:
+                historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
+                ler_historico()
+                menu_final()
+            except:
+                print("Arquivo não encontrado!")
+    else:
+        print("Opção inválida, tente novamente!")
