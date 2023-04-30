@@ -48,7 +48,7 @@ def convert_caps(texto):
 
 def teste_vazio(texto):
     while not texto:
-        texto = input("Nome inválido! Digite novamente: ")
+        texto = input("Você não digitou nada, tente novamente!")
         return texto
     '''while True:
         if texto.strip():
@@ -63,5 +63,5 @@ def teste_vazio(texto):
             print("Você não digitou nada, tente novamente!")'''
 
 def menu_final():
-    opcao2 = input("\nMenu:\n(1)Jogar Novamente\n(2)Sair\n(3)Ver histórico de partidas\nEscolha uma opção: ")
+    opcao2 = input("\nMenu:\n(1)Jogar Novamente\n(2)Sair\nEscolha uma opção: ")
     return opcao2

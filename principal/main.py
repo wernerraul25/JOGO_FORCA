@@ -87,16 +87,14 @@ try:
 
         opcao2 = menu_final()
         if opcao2 == "1":
+            historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
             pass
         elif opcao2 == "2":
+            historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
             break
-        elif opcao2 == "3":
-                try:
-                    historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
-                    ler_historico()
-                except:
-                    print("Arquivo não encontrado!")
         else:
-            print("Opção inválida, tente novamente!")
+            print("Opção inválida! O jogo foi reiniciado!")
+            input("Press ENTER to continue...")
+            pass
 except:
     print("Algo de errado aconteceu! Por favor reinicie o jogo!")
