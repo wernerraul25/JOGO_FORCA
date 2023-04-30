@@ -3,5 +3,5 @@
 
 
 ALUNOS E RA:
--RAUL WERNER 1129436 /
--CHARLES CÉSAR SAVADINSCKY 1129536
+-RAUL WERNER - 1129436 - https://github.com/wernerraul25 /
+-CHARLES CÉSAR SAVADINSCKY - 1129536 - https://github.com/CharlesSavadinscky
