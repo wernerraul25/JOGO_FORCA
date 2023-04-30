@@ -1,4 +1,4 @@
-from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, convert_caps
+from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, convert_caps, teste_vazio
 
 while True:
     limpar_tela()
@@ -7,8 +7,11 @@ while True:
 
     limpar_tela()
 
-    nome_desafiante = input("Nome do desafiante: ")
     nome_competidor = input("Nome do competidor: ")
+    teste_vazio(nome_competidor)
+
+    nome_desafiante = input("Nome do desafiante: ")
+    teste_vazio(nome_desafiante)
 
     limpar_tela()
 
@@ -21,11 +24,11 @@ while True:
 
     tamanho_palavra_chave = len(palavra_chave)
     palavra_oculta = '*' * tamanho_palavra_chave
-    dicas_solicitadas = 0
-
+    
     print("A palavra chave contém", tamanho_palavra_chave, "letra(s)!")
     input("Press ENTER to continue...")
-    
+
+    dicas_solicitadas = 0
     erros = 0
     tentativas = []
     acertos= []
@@ -55,6 +58,7 @@ while True:
                 print("Essa letra não pertence a palavra.")
                 tentativas.append(letra)
                 erros += 1
+                print("Total de erros:", erros)
             else:
                 print("Você acertou a letra:")
                 acertos.append(letra)

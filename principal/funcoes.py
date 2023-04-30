@@ -30,10 +30,10 @@ def menu():
 def historico(nome_competidor, nome_desafiante,palavra_chave, vencedor):
     arquivo = open("historico.txt","a")
     if vencedor == nome_competidor:
-        arquivo.write("Vencedor: Competidor " + nome_competidor + ", Perdedor: Desafiante " + nome_desafiante + ", Palavra-chave: " + palavra_chave)
+        arquivo.write("Vencedor:" + nome_competidor + ", Perdedor: Desafiante " + nome_desafiante + ", Palavra-chave: " + palavra_chave)
         arquivo.write("\n")
     else:
-        arquivo.write("Vencedor: Desafiante " + nome_desafiante + ", Perdedor: Competidor " + nome_competidor+ ", Palavra-chave: " + palavra_chave)
+        arquivo.write("Vencedor:" + nome_desafiante + ", Perdedor: Competidor " + nome_competidor+ ", Palavra-chave: " + palavra_chave)
         arquivo.write("\n")
     arquivo.close()
 
@@ -45,3 +45,8 @@ def ler_historico():
 
 def convert_caps(texto):
     return texto.upper()
+
+def teste_vazio(texto):
+    while not texto:
+        texto = input("Nome inválido! Digite novamente: ")
+        return texto
