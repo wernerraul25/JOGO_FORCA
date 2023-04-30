@@ -16,9 +16,13 @@ while True:
     limpar_tela()
 
     palavra_chave = input("Digite a palavra chave: ")
+    teste_vazio(palavra_chave)
     dica1 = input("Dica 1: ")
+    teste_vazio(dica1)
     dica2 = input("Dica 2: ")
+    teste_vazio(dica2)
     dica3 = input("Dica 3: ")
+    teste_vazio(dica3)
 
     limpar_tela()
 
