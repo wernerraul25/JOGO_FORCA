@@ -46,22 +46,6 @@ def ler_historico():
 def convert_caps(texto):
     return texto.upper()
 
-def teste_vazio(texto):
-    while not texto:
-        texto = input("Você não digitou nada, tente novamente!")
-        return texto
-    '''while True:
-        if texto.strip():
-            return texto
-        else:
-            print("Você não digitou nada, tente novamente!")'''
-    '''while True:
-        if texto:
-            return texto
-            break
-        else:
-            print("Você não digitou nada, tente novamente!")'''
-
 def menu_final():
     opcao2 = input("\nMenu:\n(1)Jogar Novamente\n(2)Sair\nEscolha uma opção: ")
     return opcao2

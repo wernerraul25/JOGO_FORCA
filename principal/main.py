@@ -1,4 +1,4 @@
-from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, convert_caps, teste_vazio, menu_final
+from funcoes import limpar_tela, tela_inicial, menu, historico, ler_historico, convert_caps, menu_final
 
 try:
     while True:
@@ -37,16 +37,29 @@ try:
         while True:
             opcao = menu()
             if opcao =="2":
-                dicas_solicitadas += 1
-                if dicas_solicitadas > 3:
-                    print("Você solicitou o número máximo de dicas!")
+                dica = 0
+                if dica == 0:
+                    print("Dica 1:", dica1)
+                    dica = dica+1
+                    print(dica)
+                    input("Press ENTER to continue...")
+                    limpar_tela()
+                elif dica == 1:
+                    print("Jogue para desbloquear mais dicas!")
+                    dica = dica + 1
+                    input("Press ENTER to continue...")
+                    limpar_tela()
+                elif dica == 2:
+                    print("Dica 1:", dica1, "\nDica 2:", dica2)
+                    dica = dica + 1
+                    limpar_tela()
+                elif dica == 3:
+                    print("Jogue para desbloquear mais dicas!")
+                    dica = dica + 1
+                    input("Press ENTER to continue...")
+                    limpar_tela()
                 else:
-                    if dicas_solicitadas == 1:
-                        print("Dica 1:", dica1)
-                    elif dicas_solicitadas == 2:
-                        print("Dica 2:", dica2)
-                    else:
-                        print("Dica 3:", dica3)
+                    print("Dica 1:", dica1,"\nDica 2:", dica2, "\nDica 3:",dica3,"\nSuas dicas acabaram")
                 pass
             elif opcao == "1":
                 letra = input("Digite uma letra: ")
@@ -57,6 +70,8 @@ try:
                     tentativas.append(letra)
                     erros += 1
                     print("Total de erros:", erros)
+                    input("Press ENTER to continue...")
+                    limpar_tela()
                 else:
                     print("Você acertou a letra:")
                     acertos.append(letra)
