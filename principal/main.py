@@ -89,6 +89,7 @@ try:
                     ler_historico()
                 except:
                     print("Arquivo não encontrado!")
+                    print("É possível que não tenha nenhuma partida no histórico!")
             else:
                 print("Opção inválida, tente novamente!")
             if erros >= 5:
