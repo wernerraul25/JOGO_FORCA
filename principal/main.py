@@ -103,6 +103,7 @@ try:
             pass
         elif opcao2 == "2":
             historico(nome_desafiante, nome_competidor, palavra_chave, vencedor)
+            limpar_tela()
             break
         else:
             print("Opção inválida! O jogo foi reiniciado!")
