@@ -31,36 +31,32 @@ try:
         tentativas = []
         acertos= []
         vencedor = []
+        dica = 0
 
         limpar_tela()
 
         while True:
             opcao = menu()
             if opcao =="2":
-                dica = 0
-                if dica == 0:
-                    dica = dica+1
-                    print("Dica 1:", dica1)
-                    print(dica)
-                    input("Press ENTER to continue...")
-                    limpar_tela()
-                elif dica == 1:
-                    print("Jogue para desbloquear mais dicas!")
+                if dica==0:
+                    print("Dica 1: ", dica1)
                     dica = dica+1
                     input("Press ENTER to continue...")
                     limpar_tela()
-                elif dica == 2:
-                    print("Dica 1:", dica1, "\nDica 2:", dica2)
+
+                elif dica==1:
+                    print("Jogue para desbloquear mais dicas!")
+                    input("Press ENTER to continue...")
                     dica = dica + 1
                     limpar_tela()
-                elif dica == 3:
-                    print("Jogue para desbloquear mais dicas!")
-                    dica = dica + 1
+
+                elif dica==2:
+                    print("Dica 1: ", dica1,"\n""Dica 2: ", dica2)
+                    dica = dica+1
                     input("Press ENTER to continue...")
                     limpar_tela()
                 else:
-                    print("Dica 1:", dica1,"\nDica 2:", dica2, "\nDica 3:",dica3,"\nSuas dicas acabaram")
-                pass
+                    print("Dica 1:", dica1,"\nDica 2:", dica2, "\nDica 3:",dica3,"\nEssas são as dicas!")
             elif opcao == "1":
                 letra = input("Digite uma letra: ")
                 if letra in tentativas:
