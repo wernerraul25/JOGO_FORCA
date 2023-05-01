@@ -1,5 +1,5 @@
 # JOGO DA FORCA EM PYTHON
- Criando um jogo da forca para trabalho da faculdade em python
+ Jogo da forca criado para trabalho da faculdade em python
 
 
 ALUNOS E RA:
