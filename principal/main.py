@@ -60,9 +60,9 @@ try:
             elif opcao == "1":
                 letra = input("Digite uma letra: ")
                 if letra in tentativas:
-                    print("Você já tentou essa letra anteriormente.")
+                    print("Você já tentou essa letra anteriormente!")
                 elif letra not in palavra_chave:
-                    print("Essa letra não pertence a palavra.")
+                    print("Essa letra não pertence a palavra!")
                     tentativas.append(letra)
                     erros += 1
                     print("Total de erros:", erros)
